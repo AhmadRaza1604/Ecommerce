@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from 'react-toastify';
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -13,6 +14,8 @@ const ProductDetail = () => {
                 setProduct(response.data);
             } catch (error) {
                 console.error("Error fetching product details:", error);
+            toast.error(error.response?.data?.message || 'Failed to fetch Product Detail!');
+
             }
         };
 

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 import { FaBars } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 const Navbar = () => {
@@ -23,6 +24,7 @@ const Navbar = () => {
     const handleLogout = () => {
         localStorage.removeItem('accessToken');
         localStorage.removeItem('user');
+        toast.info('You have been logged Out!');
         navigate('/login');
     }
     return (

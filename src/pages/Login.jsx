@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from 'react-toastify';
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -37,12 +38,13 @@ const Login = () => {
             });
             console.log("Login successful:", response.data);
             localStorage.setItem('accessToken', response.data.accessToken)
+            toast.success(`Login Successful, Welcome ${response.data.firstName}!`);
             // set user data in local storage to show in navbar
-            const response1 = await axios.get("https://dummyjson.com/users/2");
-            localStorage.setItem('user', JSON.stringify(response1.data));
+            localStorage.setItem('user', JSON.stringify(response.data));
             navigate("/");
         } catch (error) {
             console.error("Login failed:", error);
+            toast.error(error.response?.data?.message || 'Email or Password is incorrect!');
         }
     };
 

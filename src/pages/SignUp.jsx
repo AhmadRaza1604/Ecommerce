@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
@@ -42,9 +43,12 @@ const Signup = () => {
                 password: data.password,
             });
             console.log("Signup successful:", response.data);
+            toast.success(`SignUp Successful, You can Login now!`);
             navigate("/login");
         } catch (error) {
             console.error("Signup failed:", error);
+            toast.error(error.response?.data?.message || 'Failed to Signup!');
+
         }
     };
 
