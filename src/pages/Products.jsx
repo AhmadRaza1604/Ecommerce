@@ -36,10 +36,10 @@ const Products = () => {
                     {products.map((product) => (
                         <Link
                             to={`/product-detail/${product.id}`}
+                            key={product.id}
                         >
 
                             <div
-                                key={product.id}
                                 className="bg-white shadow-md  rounded-lg w-52 place-self-center border-gray-100   h-80 hover:shadow-lg duration-300 hover:-translate-y-4 transition-all "
                             >
                                 <img

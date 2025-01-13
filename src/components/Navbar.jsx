@@ -36,7 +36,7 @@ const Navbar = () => {
                         <h1 className="text-2xl font-thin text-black">Ecommerce</h1>
                     </div>
                 </Link>
-                <div className="md:flex flex-row hidden w-10/12 h-12 rounded-full items-center justify-end px-4">
+                <div className="md:flex flex-row hidden w-10/12 h-12 rounded-lg items-center justify-end px-4">
                     <div>
                         {links.map((link) => (
                             <Link
@@ -45,7 +45,7 @@ const Navbar = () => {
                                 className={`mx-1 ${link.name === "Login"
                                     ? "text-white bg-black hover:bg-green-800"
                                     : "hover:bg-black text-black hover:text-white"
-                                    } font-semibold py-2 px-4 duration-300 transition-all ease-in rounded-full`}
+                                    } font-semibold py-2 px-4 duration-300 transition-all ease-in rounded-lg`}
                             >
                                 {link.name}
                             </Link>
@@ -54,11 +54,11 @@ const Navbar = () => {
                         {/* If user is logged in user name and logout button will show otherwise login button */}
                     {user ?
                         <>
-                            <img src={user.image} className=" ml-2 w-6 border-2 rounded-full" />
+                            <img src={user.image} className=" ml-2 w-6 border-2 rounded-lg" />
                             <h1 className="text-black mr-2 cursor-pointer  font-semibold">{user.firstName}</h1>
                             <button
                                 onClick={() => handleLogout()}
-                                className={`ml-2 text-white bg-black hover:scale-95 font-semibold py-2 px-4 duration-300 transition-all ease-in rounded-full`}
+                                className={`ml-2 text-white bg-black hover:scale-95 font-semibold py-2 px-4 duration-300 transition-all ease-in rounded-lg`}
                             >
                                 Logout
                             </button>
@@ -66,7 +66,7 @@ const Navbar = () => {
                         :
                         <Link
                             to={'/login'}
-                            className={`mx-1 text-white bg-black hover:scale-95 font-semibold py-2 px-4 duration-300 transition-all ease-in rounded-full`}
+                            className={`mx-1 text-white bg-black hover:scale-95 font-semibold py-2 px-4 duration-300 transition-all ease-in rounded-lg`}
                         >
                             Login
                         </Link>
@@ -75,9 +75,9 @@ const Navbar = () => {
                  {/* Toggle Links Button For mobile view */}
                 <div
                     onClick={() => setShow(!show)}
-                    className="sm:flex md:hidden bg-black w-fit h-12 hover:bg-green-800 cursor-pointer rounded-full items-center flex justify-end px-1"
+                    className="sm:flex md:hidden bg-black w-fit h-12 hover:bg-green-800 cursor-pointer rounded-lg items-center flex justify-end px-1"
                 >
-                    <button className="mx-1 font-semibold py-1 px-2 duration-300 transition-all ease-in rounded-full">
+                    <button className="mx-1 font-semibold py-1 px-2 duration-300 transition-all ease-in rounded-lg">
                         {show ? <IoClose /> : <FaBars />}
                     </button>
                 </div>
@@ -90,7 +90,7 @@ const Navbar = () => {
                             <Link
                                 to={link.url}
                                 key={link.name}
-                                className={`mx-1 w-52 hover:bg-black text-black hover:text-white font-semibold py-2 px-4 duration-300 transition-all ease-in rounded-full`}
+                                className={`mx-1 w-52 hover:bg-black text-black hover:text-white font-semibold py-2 px-4 duration-300 transition-all ease-in rounded-lg`}
                             >
                                 {link.name}
                             </Link>
@@ -100,12 +100,12 @@ const Navbar = () => {
                             <>
                                 <div className="flex gap-1">
 
-                                    <img src={user.image} className=" ml-2 w-6 border-2 rounded-full" />
+                                    <img src={user.image} className=" ml-2 w-6 border-2 rounded-lg" />
                                     <h1 className="text-black mr-2 font-semibold">{user.firstName} {user.lastName}</h1>
                                 </div>
                                 <button
                                     onClick={() => handleLogout()}
-                                    className={`mx-1 text-white bg-black hover:scale-95 font-semibold py-2 px-4 duration-300 transition-all ease-in rounded-full`}
+                                    className={`mx-1 text-white bg-black hover:scale-95 font-semibold py-2 px-4 duration-300 transition-all ease-in rounded-lg`}
                                 >
                                     Logout
                                 </button>
@@ -113,7 +113,7 @@ const Navbar = () => {
                             :
                             <Link
                                 to={'/login'}
-                                className={`mx-1 w-52 text-white bg-black hover:bg-green-800 font-semibold py-2 px-4 duration-300 transition-all ease-in rounded-full`}
+                                className={`mx-1 w-52 text-white bg-black hover:bg-green-800 font-semibold py-2 px-4 duration-300 transition-all ease-in rounded-lg`}
                             >
                                 Login
                             </Link>
