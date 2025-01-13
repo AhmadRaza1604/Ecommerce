@@ -7,6 +7,7 @@ import Signup from "../pages/SignUp";
 import Products from "../pages/Products";
 import ProductDetail from "../pages/ProductDetail";
 import Checkout from "../pages/Checkout";
+import Footer from "../components/Footer";
 
 const AppRoutes = () => {
 
@@ -16,6 +17,7 @@ const AppRoutes = () => {
       <>
         <Navbar />
         <div className="mt-20 z-20">{children}</div>
+        <Footer/>
       </>
     );
   };
